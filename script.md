@@ -100,3 +100,36 @@ order by
 ~~~
 ---
 
+6. "Tolong bantu saya mendapatkan daftar pelanggan di USA dan kredit limit mereka, diurutkan menurut nama pelanggan."
+
+~~~sql
+select
+    customername,
+    creditlimit
+from 
+    customers
+where 
+    country = 'USA'
+order by
+    customername
+~~~
+---
+
+7. "Tolong carikan kota-kota di luar USA dengan total kredit limit di bawah 50,000 dan urutkan berdasarkan jumlah kredit dari yang tertinggi."
+
+~~~sql
+select
+    city,
+    sum(creditlimit) as amount
+from
+    customers
+where
+    country != 'USA'
+group by
+    city
+having
+    sum(creditlimit) < 50000
+order by 
+    amount desc
+~~~
+---
