@@ -1,4 +1,4 @@
-001. "tolong berikan saya 10 kota di USA dengan jumlah pelanggan terbanyak."
+1. "tolong berikan saya 10 kota di USA dengan jumlah pelanggan terbanyak."
 
 ~~~ sql
 select 
@@ -16,7 +16,7 @@ limit 10;
 ~~~
 ---
 
-002. "Saya ingin tahu pelanggan yang memiliki limit kredit nol, beserta nama kontak dan negara mereka."
+2. "Saya ingin tahu pelanggan yang memiliki limit kredit nol, beserta nama kontak dan negara mereka."
 
 ~~~sql
 select
@@ -32,7 +32,7 @@ where
 ~~~
 ---
 
-003. "Saya ingin tahu rata-rata credit limit dari keseluruhan pelanggan serta rata-rata credit limit jika tidak menghitung yang bernilai nol."
+3. "Saya ingin tahu rata-rata credit limit dari keseluruhan pelanggan serta rata-rata credit limit jika tidak menghitung yang bernilai nol."
 
 ~~~sql
 select
@@ -52,7 +52,7 @@ select
 ~~~
 ---
 
-004. "Siapa saja 10 karyawan dengan jumlah pelanggan terbanyak? Berikan nama lengkap karyawan dan jumlah pelanggan yang mereka tangani."
+4. "Siapa saja 10 karyawan dengan jumlah pelanggan terbanyak? Berikan nama lengkap karyawan dan jumlah pelanggan yang mereka tangani."
 
 ~~~sql
 select
@@ -78,7 +78,7 @@ limit 10;
 ~~~
 ---
 
-005. "Tolong berikan daftar kantor beserta jumlah karyawan di masing-masing kota, diurutkan dari jumlah terbanyak."
+5. "Tolong berikan daftar kantor beserta jumlah karyawan di masing-masing kota, diurutkan dari jumlah terbanyak."
 
 ~~~sql
 select 
@@ -97,5 +97,39 @@ group by
     offices.city
 order by
     amount desc;
+~~~
+---
+
+6. "Tolong bantu saya mendapatkan daftar pelanggan di USA dan kredit limit mereka, diurutkan menurut nama pelanggan."
+
+~~~sql
+select
+    customername,
+    creditlimit
+from 
+    customers
+where 
+    country = 'USA'
+order by
+    customername
+~~~
+---
+
+7. "Tolong carikan kota-kota di luar USA dengan total kredit limit di bawah 50,000 dan urutkan berdasarkan jumlah kredit dari yang tertinggi."
+
+~~~sql
+select
+    city,
+    sum(creditlimit) as amount
+from
+    customers
+where
+    country != 'USA'
+group by
+    city
+having
+    sum(creditlimit) < 50000
+order by 
+    amount desc
 ~~~
 ---
