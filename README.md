@@ -8,7 +8,7 @@ terima kasih..
 
 # database explanation
 
-[oke](E:\content\SQL_tutorial\database_design.jpg)
+![oke](database_design.jpg)
 
 ## Tabel Dimensi
 
