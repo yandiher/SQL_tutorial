@@ -22,6 +22,14 @@ Tabel pertama adalah pelanggan:
 |nama_lengkap|berisi nama lengkap pelanggan|
 |email|berisi email pelanggan|
 
+```sql
+create table pelanggan(
+	id_pelanggan int primary key,
+	nama_lengkap varchar(50),
+	email varchar(50)
+);
+```
+
 Tabel kedua adalah makanan:
 
 |nama kolom| penjelasan|
@@ -32,6 +40,17 @@ Tabel kedua adalah makanan:
 |isi_per_box|berisi jumlah satuan dalam satu box|
 |harga_beli|berisi harga beli dalam satu box|
 |harga_jual_satuan|berisi harga jual satuan|
+
+```sql
+create table makanan(
+	id_makanan int primary key,
+	nama_makanan varchar(50),
+	kategori varchar(50),
+	isi_per_pcs int,
+	harga_beli int,
+	harga_jual_satuan int
+);
+```
 
 
 ## Tabel Fakta
@@ -46,6 +65,14 @@ Tabel pertama adalah transaksi:
 |id_pelanggan|foreign key dari tabel pelanggan|
 |tanggal_transaksi|berisi tanggal dilakukannya transaksi|
 
+```sql
+create table transaksi(
+	id_transaksi int primary key,
+	id_pelanggan int references pelanggan(id_pelanggan),
+	tanggal_transaksi date
+);
+```
+
 Tabel kedua adalah detail transaksi:
 
 |nama kolom| penjelasan|
@@ -54,6 +81,15 @@ Tabel kedua adalah detail transaksi:
 |id_transaksi|foreign key dari tabel transaksi|
 |id_makanan|foreign key dari tabel makanan|
 |jumlah|berisi jumlah makanan yang dipesan|
+
+```sql
+create table detail_transaksi(
+	id_detail_transaksi int primary key,
+	id_transaksi int references transaksi(id_transaksi),
+	id_makanan int references makanan(id_makanan),
+	jumlah int
+);
+```
 
 ## Penjelasan Tabel
 

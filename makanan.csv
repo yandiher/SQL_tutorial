@@ -1,0 +1,17 @@
+"id_makanan","nama_makanan","kategori","isi_per_pcs","harga_beli","harga_jual_satuan"
+1,"fishroll","frozen",40,47900,3000
+2,"chikuwa","frozen",83,53000,2000
+3,"dumpling_keju","frozen",50,62000,3000
+4,"dumpling_ayam","frozen",50,53000,3000
+5,"crab_stick","frozen",60,58000,2500
+6,"flower_twister","frozen",60,58000,2500
+7,"bakso_ikan","frozen",50,54000,3000
+8,"bakso_tahu","frozen",48,54000,3000
+9,"sosis","frozen",40,22000,2000
+10,"enoki","jamur",3,4000,3000
+11,"kerupuk_bawang","kerupuk",20,22000,3000
+12,"kerupuk_bubur","kerupuk",20,24000,3000
+13,"kerupuk_mawar","kerupuk",20,22000,3000
+14,"batagor_kering","kerupuk",20,23000,3000
+15,"lidah","kerupuk",20,22000,3000
+16,"mie","mie",10,18000,3000
