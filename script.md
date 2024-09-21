@@ -59,7 +59,7 @@ group by kategori
 
 union
 
-select "TOTAL", (select sum(harga_beli) from makanan)
+select 'TOTAL', (select sum(harga_beli) from makanan)
 
 order by jumlah;
 ```
@@ -131,4 +131,67 @@ on p.id_pelanggan=t.id_pelanggan
 group by tanggal_transaksi
 order by jumlah_transaksi desc
 limit 3;
+```
+
+# 009
+
+## code solution
+
+```sql
+select 
+case extract (month from tanggal_transaksi)
+when 1 then 'January'
+when 2 then 'February'
+when 3 then 'March'
+when 4 then 'April'
+when 5 then 'May'
+when 6 then 'June'
+when 7 then 'July'
+when 8 then 'August'
+when 9 then 'September'
+when 10 then 'October'
+when 11 then 'November'
+when 12 then 'December'
+end "bulan",
+count(*) as jumlah
+
+from transaksi
+
+group by  bulan
+order by jumlah desc;
+```
+
+# 010
+
+## code solution
+
+```sql
+select
+extract(DOW from tanggal_transaksi) as hari,
+count(tanggal_transaksi)/52 avg_transaksi_perhari
+
+from transaksi
+
+group by hari
+order by avg_transaksi_perhari desc;
+```
+
+# 011
+
+## code solution
+
+```sql
+select
+nama_lengkap,
+tanggal_transaksi,
+count(*) jumlah
+
+from transaksi t
+join pelanggan p
+on t.id_pelanggan=p.id_pelanggan
+
+where extract(month from tanggal_transaksi) = 3
+group by tanggal_transaksi, nama_lengkap
+having count(*) > 2
+order by tanggal_transaksi desc;
 ```
