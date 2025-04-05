@@ -8,8 +8,6 @@ terima kasih..
 
 # database explanation
 
-![oke](database_design.jpg)
-
 ## Tabel Dimensi
 
 Terdapat dua tabel dimensi dalam database seblak prasmanan.
