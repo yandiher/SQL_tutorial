@@ -8,6 +8,8 @@ terima kasih..
 
 # database explanation
 
+![Seblak Prasmanan Scheme](seblak_prasmanan.png)
+
 ## Tabel Dimensi
 
 Terdapat dua tabel dimensi dalam database seblak prasmanan.
@@ -20,7 +22,7 @@ Tabel pertama adalah pelanggan:
 |nama_lengkap|berisi nama lengkap pelanggan|
 |email|berisi email pelanggan|
 
-```sql
+```sql	
 create table pelanggan(
 	id_pelanggan int primary key,
 	nama_lengkap varchar(50),
@@ -44,12 +46,11 @@ create table makanan(
 	id_makanan int primary key,
 	nama_makanan varchar(50),
 	kategori varchar(50),
-	isi_per_pcs int,
+	isi_per_box int,
 	harga_beli int,
 	harga_jual_satuan int
 );
 ```
-
 
 ## Tabel Fakta
 

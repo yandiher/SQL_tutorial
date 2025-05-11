@@ -1,4 +1,4 @@
-"id_makanan","nama_makanan","kategori","isi_per_pcs","harga_beli","harga_jual_satuan"
+"id_makanan","nama_makanan","kategori","isi_per_box","harga_beli","harga_jual_satuan"
 1,"fishroll","frozen",40,47900,3000
 2,"chikuwa","frozen",83,53000,2000
 3,"dumpling_keju","frozen",50,62000,3000
