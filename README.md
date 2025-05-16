@@ -68,7 +68,10 @@ Tabel pertama adalah transaksi:
 create table transaksi(
 	id_transaksi int primary key,
 	id_pelanggan int references pelanggan(id_pelanggan),
-	tanggal_transaksi date
+	tanggal_transaksi date,
+	pedas int,
+	sayuran varchar(50),
+	metode_pembayaran varchar(50)
 );
 ```
 
@@ -96,6 +99,37 @@ Tabel fakta adalah inti dari sebuah database. Tabel ini dibuat untuk merekam log
 
 Karena tiap transaksi bisa memesan lebih dari satu makanan, maka dibuat tabel detail transaksi untuk membantu merekam makanan apa saja yang dipesan tiap transaksi.
 
-# challenge
+# full code
 
-tantangan terbagi menjadi tiga level, yaitu: skin, flesh, dan seed.
+```sql
+create table pelanggan(
+	id_pelanggan int primary key,
+	nama_lengkap varchar(50),
+	email varchar(50)
+);
+
+create table makanan(
+	id_makanan int primary key,
+	nama_makanan varchar(50),
+	kategori varchar(50),
+	isi_per_box int,
+	harga_beli int,
+	harga_jual_satuan int
+);
+
+create table transaksi(
+	id_transaksi int primary key,
+	id_pelanggan int references pelanggan(id_pelanggan),
+	tanggal_transaksi date,
+	pedas int,
+	sayuran varchar(50),
+	metode_pembayaran varchar(50)
+);
+
+create table detail_transaksi(
+	id_detail_transaksi int primary key,
+	id_transaksi int references transaksi(id_transaksi),
+	id_makanan int references makanan(id_makanan),
+	jumlah int
+);
+```
