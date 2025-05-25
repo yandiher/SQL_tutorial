@@ -63,6 +63,10 @@ Tabel pertama adalah transaksi:
 |id_transaksi|primary key|
 |id_pelanggan|foreign key dari tabel pelanggan|
 |tanggal_transaksi|berisi tanggal dilakukannya transaksi|
+|pedas|berisi level kepedasan|
+|sayuran|berisi tiga pilihan: tanpa sayur, sawi putih, dan sawi hijau|
+|metode_pembayaran|berisi empat pilihan: debit, cash, qris, transfer|
+
 
 ```sql
 create table transaksi(
